@@ -54,7 +54,7 @@ console.log(deepRequiredReadonlyBook);
 
 /*3.*/
 type UpperCaseKeys<T> = {
-  [K in keyof T as Uppercase<string & K>]: T[K];
+  [K in keyof T & string as Capitalize<K>]: T[K];
 };
 
 type UpperCaseAuthor = UpperCaseKeys<IAuthor>;
