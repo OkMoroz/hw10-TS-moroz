@@ -36,7 +36,7 @@ console.log(deepReadonlyBook);
 
 /*2.*/
 type DeepRequireReadonly<T> = {
-  readonly [K in keyof T]: T[K] | DeepRequireReadonly<T[K]>;
+  readonly [K in keyof T]-?: T[K] | DeepRequireReadonly<T[K]>;
 };
 
 type DeepRequireReadonlyBook = DeepRequireReadonly<IBook>;
